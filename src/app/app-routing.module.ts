@@ -20,7 +20,7 @@ const routes: Routes = [
 	},
 	{
 		path: '',
-		component: DashboardComponent,
+		component: LoginComponent,
 		// add auth check here and redirect to login if user is not authenticated 
 	}
 
