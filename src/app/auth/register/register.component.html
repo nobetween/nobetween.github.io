@@ -1,0 +1,43 @@
+<div class="form-container">
+	<form [formGroup]="formGroup" class="flex-container" autocomplete="off">
+		<span class="nobetween-info"> Coordinate with your course administrator for the correct Course/Club Code
+		</span>
+		<mat-form-field appearance="standard">
+			<mat-label>COURSE/CLUB CODE</mat-label>
+			<input matInput formControlName="ClubCode" placeholder="COURSE/CLUB CODE">
+		</mat-form-field>
+		<mat-form-field appearance="standard">
+			<mat-label>FIRST NAME</mat-label>
+			<input matInput formControlName="FirstName" placeholder="FIRST NAME">
+		</mat-form-field>
+		<mat-form-field appearance="standard">
+			<mat-label>LAST NAME</mat-label>
+			<input matInput formControlName="LastName" placeholder="LAST NAME">
+		</mat-form-field>
+		<mat-form-field appearance="standard">
+			<mat-label>PHONE NUMBER</mat-label>
+			<input matInput formControlName="PhoneNumber" placeholder="PHONE NUMBER" type="tel">
+		</mat-form-field>
+		<mat-form-field appearance="standard">
+			<mat-label>EMAIL</mat-label>
+			<input matInput formControlName="Email" placeholder="EMAIL" type="email">
+		</mat-form-field>
+		<mat-form-field appearance="standard">
+			<mat-label>PASSWORD</mat-label>
+			<input matInput formControlName="Password" placeholder="PASSWORD" type="password">
+		</mat-form-field>
+		<mat-form-field appearance="standard">
+			<mat-label>CONFIRM PASSWORD</mat-label>
+			<input matInput formControlName="PasswordConfirm" placeholder="CONFIRM PASSWORD" type="password">
+		</mat-form-field>
+		<mat-form-field appearance="standard">
+			<mat-label>ACCESS LEVEL</mat-label>
+			<mat-select formControlName="AccessLevel">
+				<mat-option *ngFor="let level of vmAcess" [value]="level.value">
+					{{ level.label }}</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<button type="button" mat-flat-button color="primary" (click)="onCreateAccount_Click()"> CREATE ACCOUNT
+		</button>
+	</form>
+</div>

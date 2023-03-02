@@ -1,0 +1,124 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '~@angular/material/theming';
+@include mat-core();
+
+$nobetween-app-primary: mat-palette($mat-indigo);
+$nobetween-app-accent: mat-palette($mat-pink, A200, A100, A400);
+$nobetween-app-theme: mat-light-theme($nobetween-app-primary, $nobetween-app-accent);
+
+@include angular-material-theme($nobetween-app-theme);
+
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #262626;
+}
+
+.mat-button {
+    width: 200px;
+    color: #7f7f7f;
+
+    :hover {
+        color: #FFFFFF;
+    }
+}
+
+.mat-form-field {
+    width: 200px;
+    font-size: 12px;
+    color: #FFFFFF;
+
+    input::placeholder {
+        color: #7f7f7f;
+    }
+
+    .mat-input-element {
+        color: #7f7f7f;
+    }
+
+    .mat-form-field-label {
+        color: #7f7f7f;
+    }
+
+    .mat-form-field-underline {
+        background-color: #7f7f7f;
+    }
+
+    .mat-form-field-ripple {
+        background-color: #7f7f7f;
+    }
+
+    .mat-form-field-required-marker {
+        color: #7f7f7f;
+    }
+}
+
+.mat-form-field.mat-focused {
+    .mat-form-field-label {
+        color: #FFFFFF;
+    }
+
+    .mat-form-field-ripple {
+        background-color: #FFFFFF;
+        ;
+    }
+
+    .mat-form-field-required-marker {
+        color: #FFFFFF;
+        ;
+    }
+
+    .mat-input-element {
+        color: #FFFFFF;
+    }
+}
+
+
+.mat-form-field:hover {
+    .mat-form-field-label {
+        color: white;
+    }
+
+    .mat-form-field-ripple {
+        background-color: white;
+    }
+
+    .mat-form-field-required-marker {
+        color: white;
+    }
+
+    .mat-input-element {
+        color: white;
+    }
+}
+
+.mat-select-value-text {
+    color: white;
+}
+
+mat-icon {
+    color: #7f7f7f;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s;
+    -webkit-text-fill-color: #fff !important;
+}
+
+
+// sets text color of primary buttons
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+    color: #FFFFFF;
+}

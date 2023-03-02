@@ -1,0 +1,13 @@
+<div class="form-container">
+    <form [formGroup]="formGroup" class="flex-container" autocomplete="off">
+        <mat-form-field appearance="standard">
+            <mat-label>EMAIL</mat-label>
+            <input matInput formControlName="Email" placeholder="EMAIL" type="email">
+        </mat-form-field>
+        <button type="button" mat-flat-button color="primary" (click)="onResetPassword_Click()"> RESET PASSWORD
+        </button>
+        <span class="nobetween-info"> If an account with this email address exists, you will receive an email to reset
+            your password.
+        </span>
+    </form>
+</div>
