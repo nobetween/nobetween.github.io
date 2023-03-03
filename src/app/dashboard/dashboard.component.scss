@@ -1,0 +1,29 @@
+.dashboard-container {
+    height: 100%;
+    width: 100%;
+    background-color: #262626;
+}
+
+.header-container {
+    height: 45px;
+    width: 100%;
+    background-color: RGBA(26, 35, 126, .3);
+}
+
+.golf-icon {
+    margin: 8px;
+    cursor: pointer;
+}
+
+.sidenav-container {
+    background-color: RGBA(26, 35, 126, .3);
+}
+
+.divider-ctrl {
+    border-top-width: 2px !important;
+    background: #5c6bc0;
+}
+
+mat-list-item {
+    color: #FFFFFF !important;
+}

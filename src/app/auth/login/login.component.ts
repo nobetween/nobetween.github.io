@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormControl, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth-service';
 
 @Component({
 	standalone: true,
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit
 {
 	formGroup = new UntypedFormGroup({});
 
-	constructor(private router: Router) { }
+	constructor(private router: Router, public authService: AuthService) { }
 
 	ngOnInit(): void
 	{
@@ -38,7 +39,8 @@ export class LoginComponent implements OnInit
 
 	onLogin_Click()
 	{
-		this.router.navigate(['/dashboard'], { state: {} });
+		this.authService.authenticated = true;
+		this.router.navigate(['/home'], { state: {} });
 	}
 
 }

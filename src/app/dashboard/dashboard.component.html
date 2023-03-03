@@ -1,1 +1,96 @@
-<p>dashboard works!</p>
+<div #header class="header-container">
+    <mat-icon color="primary" class="golf-icon" (click)="showMenu()"> golf_course </mat-icon>
+</div>
+<mat-divider class="divider-ctrl"></mat-divider>
+<mat-sidenav-container class="dashboard-container">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="sidenav-container">
+        <mat-nav-list dense>
+            <mat-list-item>
+                <a matLine href="..."> Fleet Management</a>
+            </mat-list-item>
+
+            <mat-list-item>
+                <a matLine href="..."> Trends & Analysis</a>
+            </mat-list-item>
+
+            <mat-list-item>
+                <a matLine href="..."> Special Events</a>
+            </mat-list-item>
+
+            <mat-list-item>
+                <a matLine href="..."> Advertising </a>
+            </mat-list-item>
+
+            <mat-list-item>
+                <span> Course / Club Layout </span>
+                <mat-nav-list dense>
+                    <mat-list-item>
+                        <a matLine href="..."> Courses</a>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <a matLine href="..."> Holes</a>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <a matLine href="..."> Tees</a>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <a matLine href="..."> Scoresheet</a>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <a matLine href="..."> Pin Location</a>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <a matLine href="..."> Tee Location</a>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <a matLine href="..."> Approach Shot </a>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <a matLine href="..."> Geofence Type </a>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <a matLine href="..."> Geofence Area </a>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <a matLine href="..."> Default Tee-Time </a>
+                    </mat-list-item>
+                </mat-nav-list>
+            </mat-list-item>
+
+            <mat-list-item>
+                <span> Configuration & Preferences </span>
+                <mat-nav-list dense>
+                    <mat-list-item>
+                        <a matLine href="..."> Pin Location </a>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <a matLine href="..."> Games </a>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <a matLine href="..."> Commentary </a>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <a matLine href="..."> Geofencing </a>
+                    </mat-list-item>
+                </mat-nav-list>
+            </mat-list-item>
+
+            <mat-list-item>
+                <span> Administrator </span>
+                <mat-nav-list dense>
+                    <mat-list-item>
+                        <a matLine href="..."> Account Management </a>
+                    </mat-list-item>
+                </mat-nav-list>
+            </mat-list-item>
+
+            <mat-list-item>
+                <a matLine href="login"> Logout </a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content (click)="sidenav.close()">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
