@@ -1,3 +1,41 @@
-<div class="dashboard-container">
-    <span class="dashboard-text"> Change Course/Club </span>
+<div class="form-container">
+    <form [formGroup]="formGroup" autocomplete="off">
+        <div class="flex-container">
+            <span class="dashboard-text"> CHANGE COURSE/CLUB
+            </span>
+
+            <mat-form-field appearance="standard">
+                <mat-label>COURSE</mat-label>
+                <mat-select formControlName="Course">
+                    <mat-option *ngFor="let course of vmCourse" [value]="course.value">
+                        {{ course.label }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <button type="button" mat-flat-button (click)="onUpdate_Click()">
+                UPDATE
+            </button>
+        </div>
+        <div class="flex-container">
+            <span class="dashboard-text"> ADD COURSE/CLUB
+            </span>
+
+            <mat-form-field appearance="standard">
+                <mat-label>Course/Club Code</mat-label>
+                <input matInput formControlName="ClubCode" placeholder="COURSE/CLUB CODE">
+            </mat-form-field>
+
+            <mat-form-field appearance="standard">
+                <mat-label>ACCESS LEVEL</mat-label>
+                <mat-select formControlName="AccessLevel">
+                    <mat-option *ngFor="let level of vmAcess" [value]="level.value">
+                        {{ level.label }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <button type="button" mat-flat-button (click)="onAdd_Click()">
+                ADD
+            </button>
+        </div>
+    </form>
 </div>

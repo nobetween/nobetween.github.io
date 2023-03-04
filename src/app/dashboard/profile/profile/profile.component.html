@@ -1,6 +1,6 @@
 <div class="form-container">
     <form [formGroup]="formGroup" class="flex-container" autocomplete="off">
-        <span class="dashboard-text"> Edit Profile </span>
+        <span class="dashboard-text"> EDIT PROFILE </span>
         <mat-form-field appearance="standard">
             <mat-label>FIRST NAME</mat-label>
             <input matInput formControlName="FirstName" placeholder="FIRST NAME">
@@ -17,6 +17,6 @@
             <mat-label>EMAIL</mat-label>
             <input matInput formControlName="Email" placeholder="EMAIL" type="email">
         </mat-form-field>
-        <button type="button" mat-flat-button (click)="onSave_Click()" class="save-btn"> SAVE </button>
+        <button type="button" mat-flat-button (click)="onSave_Click()"> SAVE </button>
     </form>
 </div>

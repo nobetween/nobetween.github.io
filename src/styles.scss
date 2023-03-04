@@ -29,6 +29,16 @@ body {
     }
 }
 
+.mat-flat-button {
+    width: 200px;
+    background-color: #272f3c;
+    color: #c1c1c1;
+
+    :hover {
+        color: #FFFFFF;
+    }
+}
+
 .mat-form-field {
     width: 200px;
     font-size: 12px;
@@ -100,6 +110,10 @@ body {
 
 .mat-select-value-text {
     color: white;
+}
+
+.mat-select-arrow {
+    color: #c1c1c1;
 }
 
 mat-icon {
