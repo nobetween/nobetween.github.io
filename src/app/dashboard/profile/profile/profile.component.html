@@ -1,6 +1,8 @@
 <div class="form-container">
-    <form [formGroup]="formGroup" class="flex-container" autocomplete="off">
+    <div class="dashboard-text-container">
         <span class="dashboard-text"> EDIT PROFILE </span>
+    </div>
+    <form [formGroup]="formGroup" class="flex-container" autocomplete="off">
         <mat-form-field appearance="standard">
             <mat-label>FIRST NAME</mat-label>
             <input matInput formControlName="FirstName" placeholder="FIRST NAME">

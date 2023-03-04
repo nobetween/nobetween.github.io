@@ -26,5 +26,15 @@
 }
 
 .nobetween-info {
-    color: #FFFFFF;
+    color: #c1c1c1;
+}
+
+.table-link {
+    color: #bf9014c4;
+}
+
+.table-link:hover {
+    color: #bf9014;
+    text-decoration: underline;
+    cursor: pointer;
 }

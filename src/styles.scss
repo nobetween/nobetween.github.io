@@ -39,6 +39,10 @@ body {
     }
 }
 
+.mat-flat-button:hover {
+    color: #FFFFFF;
+}
+
 .mat-form-field {
     width: 200px;
     font-size: 12px;
@@ -119,6 +123,35 @@ body {
 mat-icon {
     color: #c1c1c1;
 }
+
+.mat-table {
+    width: 95%;
+    border: 1px solid #31538f;
+}
+
+.mat-header-cell {
+    background-color: #272f3c !important;
+    color: #FFF;
+    border-left: 1px solid #c1c1c117 !important;
+    border-bottom: 1px solid #31538f !important;
+    padding-left: 8px !important;
+}
+
+.mat-row:nth-child(2n+1) {
+    background-color: #262626 !important;
+}
+
+.mat-row:not(:nth-child(4n+1)) {
+    background-color: #272f3c !important;
+}
+
+.mat-cell {
+    color: #c1c1c1 !important;
+    border-left: 1px solid #c1c1c117;
+    padding-left: 8px !important;
+}
+
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
