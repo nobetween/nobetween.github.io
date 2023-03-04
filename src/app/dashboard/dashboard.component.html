@@ -1,91 +1,128 @@
-<div #header class="header-container">
-    <mat-icon color="primary" class="golf-icon" (click)="showMenu()"> golf_course </mat-icon>
-</div>
-<mat-divider class="divider-ctrl"></mat-divider>
-<mat-sidenav-container class="dashboard-container">
-    <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="sidenav-container">
+<mat-icon class="golf-icon" (click)="showMenu()"> golf_course </mat-icon>
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="sidenav-panel">
+
+        <mat-expansion-panel class="expansion-panel">
+            <mat-expansion-panel-header class="expansion-header">
+                <mat-panel-title class="expansion-title">
+                    Name Placeholder
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list dense>
+                <mat-list-item>
+                    <span (click)="navTo('profile')"> Profile </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('profile/change-course')"> Change Course/Club </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('profile/training-library')"> Training Library </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('profile/help-desk')"> Help Desk </span>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-expansion-panel>
+
         <mat-nav-list dense>
             <mat-list-item>
-                <a matLine href="..."> Fleet Management</a>
+                <span (click)="navTo('fleet-management')"> Fleet Management </span>
             </mat-list-item>
 
             <mat-list-item>
-                <a matLine href="..."> Trends & Analysis</a>
+                <span (click)="navTo('trends-analysis')"> Trends & Analysis </span>
             </mat-list-item>
 
             <mat-list-item>
-                <a matLine href="..."> Special Events</a>
+                <span (click)="navTo('special-events')"> Special Events </span>
             </mat-list-item>
 
             <mat-list-item>
-                <a matLine href="..."> Advertising </a>
+                <span (click)="navTo('advertising')"> Advertising </span>
             </mat-list-item>
+        </mat-nav-list>
 
-            <mat-list-item>
-                <span> Course / Club Layout </span>
-                <mat-nav-list dense>
-                    <mat-list-item>
-                        <a matLine href="..."> Courses</a>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <a matLine href="..."> Holes</a>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <a matLine href="..."> Tees</a>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <a matLine href="..."> Scoresheet</a>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <a matLine href="..."> Pin Location</a>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <a matLine href="..."> Tee Location</a>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <a matLine href="..."> Approach Shot </a>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <a matLine href="..."> Geofence Type </a>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <a matLine href="..."> Geofence Area </a>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <a matLine href="..."> Default Tee-Time </a>
-                    </mat-list-item>
-                </mat-nav-list>
-            </mat-list-item>
+        <mat-expansion-panel class="expansion-panel">
+            <mat-expansion-panel-header class="expansion-header">
+                <mat-panel-title class="expansion-title">
+                    Course / Club Layout
+                </mat-panel-title>
+            </mat-expansion-panel-header>
 
-            <mat-list-item>
-                <span> Configuration & Preferences </span>
-                <mat-nav-list dense>
-                    <mat-list-item>
-                        <a matLine href="..."> Pin Location </a>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <a matLine href="..."> Games </a>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <a matLine href="..."> Commentary </a>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <a matLine href="..."> Geofencing </a>
-                    </mat-list-item>
-                </mat-nav-list>
-            </mat-list-item>
 
-            <mat-list-item>
-                <span> Administrator </span>
-                <mat-nav-list dense>
-                    <mat-list-item>
-                        <a matLine href="..."> Account Management </a>
-                    </mat-list-item>
-                </mat-nav-list>
-            </mat-list-item>
+            <mat-nav-list dense>
+                <mat-list-item>
+                    <span (click)="navTo('course-layout/courses')"> Courses </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('course-layout/holes')"> Holes </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('course-layout/tees')"> Tees </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('course-layout/scoresheet')"> Scoresheet </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('course-layout/pin-location')"> Pin Location </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('course-layout/tee-location')"> Tee Location </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('course-layout/approach-shot')"> Approach Shot </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('course-layout/geofence-type')"> Geofence Type </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('course-layout/geofence-area')"> Geofence Area </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('course-layout/default-tee-time')"> Default Tee-Time </span>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-expansion-panel>
 
+        <mat-expansion-panel class="expansion-panel">
+            <mat-expansion-panel-header class="expansion-header">
+                <mat-panel-title class="expansion-title">
+                    Configuration & Preferences
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list dense>
+                <mat-list-item>
+                    <span (click)="navTo('configuration/pin-location')"> Pin Location </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('configuration/games')"> Games </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('configuration/commentary')"> Commentary </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span (click)="navTo('configuration/geofencing')"> Geofencing </span>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="expansion-panel">
+            <mat-expansion-panel-header class="expansion-header">
+                <mat-panel-title class="expansion-title">
+                    Administrator
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list dense>
+                <mat-list-item>
+                    <span (click)="navTo('administrator/account-management')"> Account Management </span>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-expansion-panel>
+
+        <mat-nav-list dense>
             <mat-list-item>
-                <a matLine href="login"> Logout </a>
+                <a matLine href="login" class="menu-link"> Logout </a>
             </mat-list-item>
         </mat-nav-list>
     </mat-sidenav>

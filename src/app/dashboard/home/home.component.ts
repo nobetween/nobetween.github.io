@@ -5,7 +5,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 	standalone: true,
 	selector: 'app-home',
 	templateUrl: './home.component.html',
-	styleUrls: ['./home.component.scss', '../../app.component.scss'],
+	styleUrls: ['./home.component.scss', '../dashboard.component.scss'],
 	imports: [CommonModule],
 	encapsulation: ViewEncapsulation.None
 })

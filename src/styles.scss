@@ -22,7 +22,7 @@ body {
 
 .mat-button {
     width: 200px;
-    color: #7f7f7f;
+    color: #c1c1c1;
 
     :hover {
         color: #FFFFFF;
@@ -35,27 +35,27 @@ body {
     color: #FFFFFF;
 
     input::placeholder {
-        color: #7f7f7f;
+        color: #c1c1c1;
     }
 
     .mat-input-element {
-        color: #7f7f7f;
+        color: #c1c1c1;
     }
 
     .mat-form-field-label {
-        color: #7f7f7f;
+        color: #c1c1c1;
     }
 
     .mat-form-field-underline {
-        background-color: #7f7f7f;
+        background-color: #c1c1c1;
     }
 
     .mat-form-field-ripple {
-        background-color: #7f7f7f;
+        background-color: #c1c1c1;
     }
 
     .mat-form-field-required-marker {
-        color: #7f7f7f;
+        color: #c1c1c1;
     }
 }
 
@@ -103,7 +103,7 @@ body {
 }
 
 mat-icon {
-    color: #7f7f7f;
+    color: #c1c1c1;
 }
 
 input:-webkit-autofill,
