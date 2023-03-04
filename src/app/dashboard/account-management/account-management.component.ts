@@ -6,18 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
-import { NavService } from 'src/app/services/nav-service';
-
-export interface UserAccount
-{
-	statuslink: string;
-	email: string;
-	firstname: string;
-	lastname: string;
-	phone: string;
-	access: string;
-	status: string;
-}
+import { UserAccount } from 'src/app/services/user-service';
 
 const USER_DATA: UserAccount[] = [
 	{ statuslink: 'Review', email: 'CBriggs84@aol.com', firstname: 'Chris', lastname: 'Briggs', phone: '2039209393', access: 'Admin', status: 'Active' }
@@ -60,7 +49,7 @@ export class AccountManagementComponent implements OnInit
 
 	activeUserAccount!: UserAccount;
 
-	constructor(private navService: NavService) { }
+	constructor() { }
 
 	ngOnInit(): void
 	{

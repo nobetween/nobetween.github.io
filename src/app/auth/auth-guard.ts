@@ -6,12 +6,12 @@ import
     Router,
     RouterStateSnapshot
 } from '@angular/router';
-import { AuthService } from '../services/auth-service';
+import { UserService } from '../services/user-service';
 
 @Injectable()
 export class AuthGuard implements CanActivate
 {
-    constructor(private router: Router, public authService: AuthService) { }
+    constructor(private router: Router, public userService: UserService) { }
 
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean
     {
@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate
 
     private logInCheck(): boolean
     {
-        if (this.authService.authenticated)
+        if (this.userService.authenticated)
         {
             return true;
         }

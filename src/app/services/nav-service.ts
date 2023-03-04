@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { AuthService } from "./auth-service";
 
 @Injectable({
     providedIn: 'root'
@@ -9,7 +8,7 @@ export class NavService
 {
     previousNavigation;
 
-    constructor(private router: Router, public authService: AuthService)
+    constructor(private router: Router)
     {
         this.previousNavigation = this.router.getCurrentNavigation()?.previousNavigation;
     }

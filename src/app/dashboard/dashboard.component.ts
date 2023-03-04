@@ -1,12 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-import { MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
-import { MatCardModule } from '@angular/material/card';
-import { AuthService } from '../services/auth-service';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
 	standalone: true,
@@ -20,7 +18,7 @@ export class DashboardComponent implements OnInit
 {
 	opened = false;
 
-	constructor(private router: Router, public authService: AuthService)
+	constructor(private router: Router)
 	{
 
 	}
