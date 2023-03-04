@@ -5,11 +5,11 @@
     <form [formGroup]="formGroup" class="flex-container" autocomplete="off">
         <mat-form-field appearance="standard">
             <mat-label>FIRST NAME</mat-label>
-            <input matInput formControlName="FirstName" placeholder="FIRST NAME">
+            <input matInput formControlName="FirstName" placeholder="FIRST NAME" required>
         </mat-form-field>
         <mat-form-field appearance="standard">
             <mat-label>LAST NAME</mat-label>
-            <input matInput formControlName="LastName" placeholder="LAST NAME">
+            <input matInput formControlName="LastName" placeholder="LAST NAME" required>
         </mat-form-field>
         <mat-form-field appearance="standard">
             <mat-label>PHONE NUMBER</mat-label>
@@ -17,8 +17,8 @@
         </mat-form-field>
         <mat-form-field appearance="standard">
             <mat-label>EMAIL</mat-label>
-            <input matInput formControlName="Email" placeholder="EMAIL" type="email">
+            <input matInput formControlName="Email" placeholder="EMAIL" type="email" required>
         </mat-form-field>
-        <button type="button" mat-flat-button (click)="onSave_Click()"> SAVE </button>
+        <button type="button" mat-flat-button (click)="onSave_Click()" [disabled]="formGroup.invalid"> SAVE </button>
     </form>
 </div>

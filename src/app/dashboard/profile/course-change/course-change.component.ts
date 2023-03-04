@@ -27,9 +27,10 @@ export class CourseChangeComponent implements OnInit
 	];
 
 	vmAcess = [
-		{ label: "Access 1", value: "Access 1" },
-		{ label: "Access 2", value: "Access 2" },
-		{ label: "Access 3", value: "Access 3" }
+		{ label: "Admin", value: "Admin" },
+		{ label: "Basic", value: "Basic" },
+		{ label: "Manager", value: "Manager" },
+		{ label: "Read-Only", value: "Read-Only" }
 	];
 
 	constructor(private navService: NavService) { }

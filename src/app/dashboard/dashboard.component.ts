@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { Router, RouterModule } from '@angular/router';
+import { UserAccount, UserService } from '../services/user-service';
 
 @Component({
 	standalone: true,
@@ -18,9 +19,11 @@ export class DashboardComponent implements OnInit
 {
 	opened = false;
 
-	constructor(private router: Router)
-	{
+	currentUser: UserAccount;
 
+	constructor(private router: Router, public userService: UserService)
+	{
+		this.currentUser = userService.getCurretUser();
 	}
 
 	ngOnInit(): void

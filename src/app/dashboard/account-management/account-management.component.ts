@@ -6,12 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
-import { UserAccount } from 'src/app/services/user-service';
-
-const USER_DATA: UserAccount[] = [
-	{ statuslink: 'Review', email: 'CBriggs84@aol.com', firstname: 'Chris', lastname: 'Briggs', phone: '2039209393', access: 'Admin', status: 'Active' }
-	, { statuslink: 'Pending Approve/Deny', email: 'TestMe@aol.com', firstname: 'Test', lastname: 'Me', phone: '4333454545', access: 'Basic', status: 'Disabled' }
-];
+import { UserAccount, UserService } from 'src/app/services/user-service';
 
 @Component({
 	standalone: true,
@@ -25,6 +20,7 @@ export class AccountManagementComponent implements OnInit
 {
 	showGrid = true;
 	accountEnabled = true;
+	formReadOnly = 'false';
 
 	activeFilter = 'VIEW ALL USERS';
 	accountStatusTxt = '';
@@ -39,17 +35,19 @@ export class AccountManagementComponent implements OnInit
 	];
 
 	vmAcess = [
-		{ label: "Access 1", value: "Access 1" },
-		{ label: "Access 2", value: "Access 2" },
-		{ label: "Access 3", value: "Access 3" }
+		{ label: "Admin", value: "Admin" },
+		{ label: "Basic", value: "Basic" },
+		{ label: "Manager", value: "Manager" },
+		{ label: "Read-Only", value: "Read-Only" }
 	];
 
+
 	displayedColumns: string[] = ['statuslink', 'email', 'firstname', 'lastname', 'phone', 'access', 'status'];
-	dataSource = USER_DATA;
+	dataSource = this.userService.getUserList();
 
 	activeUserAccount!: UserAccount;
 
-	constructor() { }
+	constructor(public userService: UserService) { }
 
 	ngOnInit(): void
 	{
@@ -81,6 +79,12 @@ export class AccountManagementComponent implements OnInit
 				}
 		}
 
+		this.formGroup.get(['FirstName'])?.setValue(userAccount.firstname);
+		this.formGroup.get(['LastName'])?.setValue(userAccount.lastname);
+		this.formGroup.get(['PhoneNumber'])?.setValue(userAccount.phone);
+		this.formGroup.get(['Email'])?.setValue(userAccount.email);
+		this.formGroup.get(['AccessLevel'])?.setValue(userAccount.access);
+
 		this.accountEnabled = this.activeUserAccount.status === 'Disabled' ? true : false;
 	}
 
@@ -90,19 +94,27 @@ export class AccountManagementComponent implements OnInit
 		{
 			case 'save':
 				{
+					this.activeUserAccount.firstname = this.formGroup.get(['FirstName'])?.value;
+					this.activeUserAccount.lastname = this.formGroup.get(['LastName'])?.value;
+					this.activeUserAccount.phone = this.formGroup.get(['PhoneNumber'])?.value;
+					this.activeUserAccount.email = this.formGroup.get(['Email'])?.value;
+					this.activeUserAccount.access = this.formGroup.get(['AccessLevel'])?.value;
 					break;
 				}
 			case 'disable':
 				{
+
 					this.activeUserAccount.status = 'Disabled';
 					break;
 				}
 			case 'enable':
 				{
-					this.activeUserAccount.status = 'Enabled';
+					this.activeUserAccount.status = 'Active';
 					break;
 				}
 		}
+
+		this.userService.updateUser(this.activeUserAccount);
 		this.showGrid = true;
 	}
 }

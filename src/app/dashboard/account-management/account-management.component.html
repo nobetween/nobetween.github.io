@@ -18,11 +18,11 @@
             </mat-form-field>
             <mat-form-field appearance="standard" *ngIf="!showGrid">
                 <mat-label>FIRST NAME</mat-label>
-                <input matInput formControlName="FirstName" placeholder="FIRST NAME">
+                <input matInput formControlName="FirstName" placeholder="FIRST NAME" required>
             </mat-form-field>
             <mat-form-field appearance="standard" *ngIf="!showGrid">
                 <mat-label>LAST NAME</mat-label>
-                <input matInput formControlName="LastName" placeholder="LAST NAME">
+                <input matInput formControlName="LastName" placeholder="LAST NAME" required>
             </mat-form-field>
             <mat-form-field appearance="standard" *ngIf="!showGrid">
                 <mat-label>PHONE NUMBER</mat-label>
@@ -30,9 +30,14 @@
             </mat-form-field>
             <mat-form-field appearance="standard" *ngIf="!showGrid">
                 <mat-label>EMAIL</mat-label>
-                <input matInput formControlName="Email" placeholder="EMAIL" type="email">
+                <input matInput formControlName="Email" placeholder="EMAIL" type="email" required>
             </mat-form-field>
-            <mat-form-field appearance="standard" *ngIf="!showGrid">
+            <!--             <mat-form-field appearance="standard" *ngIf="!showGrid">
+                <mat-label>ACCESS LEVEL</mat-label>
+                <input matInput formControlName="AccessLevel" placeholder="AccessLevel" readonly>
+            </mat-form-field> -->
+
+            <mat-form-field appearance="standard">
                 <mat-label>ACCESS LEVEL</mat-label>
                 <mat-select formControlName="AccessLevel">
                     <mat-option *ngFor="let level of vmAcess" [value]="level.value">
@@ -41,7 +46,7 @@
             </mat-form-field>
 
             <button type="button" mat-flat-button class="mat-flat-button" (click)="onAction_Click('save')"
-                *ngIf="!showGrid"> {{
+                *ngIf="!showGrid" [disabled]="formGroup.invalid"> {{
                 accountStatusBtn }}
             </button>
 
