@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit
 	onLogin_Click()
 	{
 		this.authService.authenticated = true;
-		this.router.navigate(['/home'], { state: {} });
+		this.router.navigate(['/home'], { state: { url: '/home' } });
 	}
 
 }

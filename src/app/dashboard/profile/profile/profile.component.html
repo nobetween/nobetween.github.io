@@ -1,3 +1,22 @@
-<div class="dashboard-container">
-    <span class="dashboard-text"> Profile </span>
+<div class="form-container">
+    <form [formGroup]="formGroup" class="flex-container" autocomplete="off">
+        <span class="dashboard-text"> Edit Profile </span>
+        <mat-form-field appearance="standard">
+            <mat-label>FIRST NAME</mat-label>
+            <input matInput formControlName="FirstName" placeholder="FIRST NAME">
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>LAST NAME</mat-label>
+            <input matInput formControlName="LastName" placeholder="LAST NAME">
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>PHONE NUMBER</mat-label>
+            <input matInput formControlName="PhoneNumber" placeholder="PHONE NUMBER" type="tel">
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>EMAIL</mat-label>
+            <input matInput formControlName="Email" placeholder="EMAIL" type="email">
+        </mat-form-field>
+        <button type="button" mat-flat-button (click)="onSave_Click()" class="save-btn"> SAVE </button>
+    </form>
 </div>
