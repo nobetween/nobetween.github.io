@@ -11,7 +11,7 @@
 .form-container {
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     gap: 8px;
@@ -40,6 +40,8 @@
 
 .table-link {
     color: #bf9014c4;
+    padding-left: 4px;
+    margin-left: 4px;
 }
 
 .table-link:hover {
