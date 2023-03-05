@@ -1,7 +1,11 @@
-<mat-icon class="golf-icon" (click)="showMenu()"> golf_course </mat-icon>
+<div class="header-container" *ngIf="!showIcon">
+    <mat-icon class="golf-icon" (click)="showMenu()"> golf_course </mat-icon>
+    <span class="header-text"> {{ currentPage }} </span>
+</div>
 
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="sidenav-panel">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="sidenav-panel" (openedStart)="onOpenSideNav()"
+        (closedStart)="onCloseSideNav()">
         <mat-expansion-panel class="expansion-panel">
             <mat-expansion-panel-header class="expansion-header">
                 <mat-panel-title class="expansion-title">
@@ -117,6 +121,9 @@
     </mat-sidenav>
 
     <mat-sidenav-content (click)="sidenav.close()">
+        <div class="header-container" *ngIf="showIcon">
+            <span class="header-text"> {{ currentPage }} </span>
+        </div>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

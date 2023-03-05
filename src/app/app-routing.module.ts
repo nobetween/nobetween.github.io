@@ -80,7 +80,8 @@ const routes: Routes = [
 
 			{ path: 'administrator/account-management', component: AccountManagementComponent, data: { title: 'ACCOUNT MANAGEMENT' } },
 
-		]
+		],
+		title: 'DASHBOARD'
 	}
 ];
 

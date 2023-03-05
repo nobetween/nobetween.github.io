@@ -10,6 +10,19 @@
     color: #FFFFFF;
 }
 
+.header-container {
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    height: 40px;
+}
+
+.header-text {
+    color: #FFFFFF;
+    margin-left: 8px;
+}
+
 dashboard-text-container {
     margin-top: 10px;
     margin-left: 6px;

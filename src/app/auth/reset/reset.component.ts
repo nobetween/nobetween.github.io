@@ -16,7 +16,6 @@ import { Router } from '@angular/router';
 })
 export class ResetComponent implements OnInit
 {
-
 	formGroup = new UntypedFormGroup({});
 
 	constructor(private router: Router) { }
@@ -28,7 +27,12 @@ export class ResetComponent implements OnInit
 
 	onResetPassword_Click()
 	{
-		this.router.navigate(['/login'], { state: {} });
+		this.router.navigate(['/login']);
+	}
+
+	onBack_Click()
+	{
+		this.router.navigate(['/login']);
 	}
 
 }

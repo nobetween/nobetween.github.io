@@ -39,6 +39,10 @@ body {
     }
 }
 
+.mat-flat-button:disabled {
+    pointer-events: none;
+}
+
 .mat-flat-button:hover {
     color: #FFFFFF;
 }

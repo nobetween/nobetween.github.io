@@ -4,7 +4,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { UserAccount, UserService } from '../services/user-service';
 
 @Component({
@@ -18,10 +18,13 @@ import { UserAccount, UserService } from '../services/user-service';
 export class DashboardComponent implements OnInit
 {
 	opened = false;
+	showIcon = false;
 
 	currentUser: UserAccount;
 
-	constructor(private router: Router, public userService: UserService)
+	currentPage: string = 'HOME';
+
+	constructor(private router: Router, public userService: UserService, public route: ActivatedRoute)
 	{
 		this.currentUser = userService.getCurretUser();
 	}
@@ -37,6 +40,27 @@ export class DashboardComponent implements OnInit
 
 	navTo(loc: any) 
 	{
-		this.router.navigate([loc], { state: {} });
+		this.route.snapshot.routeConfig?.children?.forEach(child =>
+		{
+			//console.log('child', child)
+			//console.log('loc', loc)
+			if (child.path === loc)
+			{
+				console.log('title', child.data?.['title'])
+				this.currentPage = child.data?.['title'] as string;
+			}
+		});
+		this.opened = false;
+		this.router.navigate([loc]);
+	}
+
+	onCloseSideNav()
+	{
+		this.showIcon = false;
+	}
+
+	onOpenSideNav()
+	{
+		this.showIcon = true;
 	}
 }

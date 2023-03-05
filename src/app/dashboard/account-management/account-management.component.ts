@@ -116,4 +116,9 @@ export class AccountManagementComponent implements OnInit
 		this.userService.updateUser(this.activeUserAccount);
 		this.showGrid = true;
 	}
+
+	onBack_Click()
+	{
+		this.showGrid = true;
+	}
 }

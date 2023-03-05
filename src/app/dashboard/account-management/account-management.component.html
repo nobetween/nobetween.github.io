@@ -1,8 +1,4 @@
 <div class="form-container">
-    <div class="dashboard-text-container">
-        <span class="dashboard-text"> ACCOUNT MANAGEMENT
-        </span>
-    </div>
     <div class="dashboard-text-container" *ngIf="!showGrid">
         <span class="dashboard-text"> {{ accountStatusTxt }}
         </span>
@@ -37,7 +33,7 @@
                 <input matInput formControlName="AccessLevel" placeholder="AccessLevel" readonly>
             </mat-form-field> -->
 
-            <mat-form-field appearance="standard">
+            <mat-form-field appearance="standard" *ngIf="!showGrid">
                 <mat-label>ACCESS LEVEL</mat-label>
                 <mat-select formControlName="AccessLevel">
                     <mat-option *ngFor="let level of vmAcess" [value]="level.value">
@@ -56,6 +52,10 @@
 
             <button type="button" mat-flat-button class="mat-flat-button" (click)="onAction_Click('enable')"
                 *ngIf="!showGrid && !accountEnabled"> ENABLE ACCOUNT
+            </button>
+
+            <button type="button" mat-flat-button class="mat-flat-button" (click)="onBack_Click()" *ngIf="!showGrid">
+                BACK TO GRID
             </button>
         </div>
     </form>

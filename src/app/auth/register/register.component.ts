@@ -60,7 +60,12 @@ export class RegisterComponent implements OnInit
 
 		this.userService.addUser(user);
 
-		this.router.navigate(['/login'], { state: {} });
+		this.router.navigate(['/login']);
+	}
+
+	onBack_Click()
+	{
+		this.router.navigate(['/login']);
 	}
 
 }
