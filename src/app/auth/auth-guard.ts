@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate
 
     private logInCheck(): boolean
     {
-        if (this.userService.authenticated)
+        if (this.userService.isAuthenticated())
         {
             return true;
         }

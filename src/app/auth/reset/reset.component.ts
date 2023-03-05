@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ReactiveFormsModule, UntypedFormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -23,7 +23,7 @@ export class ResetComponent implements OnInit
 
 	ngOnInit(): void
 	{
-		this.formGroup.addControl('Email', new FormControl());
+		this.formGroup.addControl('Email', new UntypedFormControl());
 	}
 
 	onResetPassword_Click()

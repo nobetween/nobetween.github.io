@@ -5,14 +5,14 @@ import { Injectable } from "@angular/core";
 })
 export class UserService
 {
-    _testUsers: UserAccount[] = [
+    private _testUsers: UserAccount[] = [
         { id: 0, statuslink: 'Review', email: 'christopher.s.briggs@gmail.com', firstname: 'Chris', lastname: 'Briggs', phone: '2039209393', access: 'Admin', status: 'Active', clubcode: '1', password: '89632147' }
         , { id: 1, statuslink: 'Pending Approve/Deny', email: 'TestMe@aol.com', firstname: 'Test', lastname: 'Me', phone: '4333454545', access: 'Basic', status: 'Disabled', clubcode: '1', password: 'test' }
     ];
 
     _currentUser!: UserAccount;
-    authenticated = false;
-    id_index = 1;
+    private _authenticated = false;
+    private _id_index = 1;
 
     constructor()
     {
@@ -26,9 +26,16 @@ export class UserService
             if (email === user.email && password === user.password)
             {
                 this._currentUser = user;
-                this.authenticated = true;
+                this._authenticated = true;
             }
         });
+
+        return this._authenticated;
+    }
+
+    isAuthenticated()
+    {
+        return this._authenticated;
     }
 
     addUser(user: UserAccount)
@@ -53,8 +60,8 @@ export class UserService
 
     getNewUserID()
     {
-        this.id_index++;
-        return this.id_index;
+        this._id_index++;
+        return this._id_index;
     }
 
     updateUser(user: UserAccount)

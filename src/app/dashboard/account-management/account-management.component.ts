@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormControl, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
+import { ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -41,7 +41,6 @@ export class AccountManagementComponent implements OnInit
 		{ label: "Read-Only", value: "Read-Only" }
 	];
 
-
 	displayedColumns: string[] = ['statuslink', 'email', 'firstname', 'lastname', 'phone', 'access', 'status'];
 	dataSource = this.userService.getUserList();
 
@@ -51,12 +50,12 @@ export class AccountManagementComponent implements OnInit
 
 	ngOnInit(): void
 	{
-		this.formGroup.addControl('Filter', new FormControl());
-		this.formGroup.addControl('FirstName', new FormControl());
-		this.formGroup.addControl('LastName', new FormControl());
-		this.formGroup.addControl('PhoneNumber', new FormControl());
-		this.formGroup.addControl('Email', new FormControl());
-		this.formGroup.addControl('AccessLevel', new FormControl());
+		this.formGroup.addControl('Filter', new UntypedFormControl());
+		this.formGroup.addControl('FirstName', new UntypedFormControl());
+		this.formGroup.addControl('LastName', new UntypedFormControl());
+		this.formGroup.addControl('PhoneNumber', new UntypedFormControl());
+		this.formGroup.addControl('Email', new UntypedFormControl());
+		this.formGroup.addControl('AccessLevel', new UntypedFormControl());
 	}
 
 	onStatus_Click(userAccount: UserAccount)
