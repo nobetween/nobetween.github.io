@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit
 {
 	formGroup = new UntypedFormGroup({});
 
-	constructor(private navService: NavService, public userService: UserService)
+	constructor(public userService: UserService)
 	{
 
 	}
@@ -42,7 +42,6 @@ export class ProfileComponent implements OnInit
 		this.userService.getCurretUser().lastname = this.formGroup.get(['LastName'])?.value;
 		this.userService.getCurretUser().phone = this.formGroup.get(['PhoneNumber'])?.value;
 		this.userService.getCurretUser().email = this.formGroup.get(['Email'])?.value;
-		this.navService.navigateToPreviousURL();
 	}
 
 }

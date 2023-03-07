@@ -10,12 +10,12 @@
                 <input matInput formControlName="NumOfHoles" placeholder="# OF HOLES" required type="number">
             </mat-form-field>
 
-            <button type="button" mat-flat-button class="mat-flat-button" (click)="onSave_Click()"
+            <button type="button" mat-flat-button color="primary" (click)="onSave_Click()"
                 [disabled]="formGroup.invalid">
                 SAVE
             </button>
 
-            <button type="button" mat-flat-button class="mat-flat-button" (click)="onBack_Click()">
+            <button type="button" mat-flat-button color="warn" (click)="onBack_Click()">
                 BACK TO GRID
             </button>
         </div>
@@ -26,11 +26,17 @@
 
         <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef>
-                <span class="table-link" (click)="onAdd_Click()"> ADD COURSE </span>
+                <button type="button" mat-button color="accent" (click)="onAdd_Click()"> ADD COURSE </button>
             </th>
             <td mat-cell *matCellDef="let element">
-                <span class="table-link" (click)="onDelete_Click(element)"> DELETE </span>
-                <span class="table-link" (click)="onEdit_Click(element)"> EDIT </span>
+                <button type="button" mat-button color="error" (click)="onDelete_Click(element)"> DELETE </button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let element">
+                <button type="button" mat-button color="accent" (click)="onEdit_Click(element)"> EDIT </button>
             </td>
         </ng-container>
 

@@ -1,4 +1,4 @@
-<div class="login-container">
+<div class="auth-container">
 	<span class="nobetween-info"> Coordinate with your course administrator for the correct Course/Club Code
 	</span>
 	<form [formGroup]="formGroup" class="flex-container" autocomplete="off">
@@ -37,11 +37,12 @@
 					{{ level.label }}</mat-option>
 			</mat-select>
 		</mat-form-field>
-		<button type="button" mat-flat-button (click)="onCreateAccount_Click()" [disabled]="formGroup.invalid"> CREATE
+		<button type="button" mat-flat-button color="primary" (click)="onCreateAccount_Click()"
+			[disabled]="formGroup.invalid"> CREATE
 			ACCOUNT
 		</button>
 
-		<button type="button" mat-flat-button (click)="onBack_Click()">
+		<button type="button" mat-flat-button color="warn" (click)="onBack_Click()">
 			GO BACK
 		</button>
 	</form>

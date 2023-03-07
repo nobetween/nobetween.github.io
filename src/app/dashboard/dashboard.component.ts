@@ -4,7 +4,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { NavService } from '../services/nav-service';
 import { UserAccount, UserService } from '../services/user-service';
 
 @Component({
@@ -23,14 +25,22 @@ export class DashboardComponent implements OnInit
 	currentUser: UserAccount;
 
 	currentPage: string = 'HOME';
+	routerEvents: any;
 
-	constructor(private router: Router, public userService: UserService, public route: ActivatedRoute)
+	constructor(private router: Router, public appRoutingService: NavService, public userService: UserService)
 	{
 		this.currentUser = userService.getCurretUser();
 	}
 
 	ngOnInit(): void
 	{
+		this.routerEvents = this.router.events.subscribe((val) =>
+		{
+			if (val instanceof NavigationEnd)
+			{
+				this.currentPage = this.appRoutingService.getRouteTitle();
+			}
+		});
 	}
 
 	showMenu() 
@@ -40,18 +50,8 @@ export class DashboardComponent implements OnInit
 
 	navTo(loc: any) 
 	{
-		this.route.snapshot.routeConfig?.children?.forEach(child =>
-		{
-			//console.log('child', child)
-			//console.log('loc', loc)
-			if (child.path === loc)
-			{
-				console.log('title', child.data?.['title'])
-				this.currentPage = child.data?.['title'] as string;
-			}
-		});
 		this.opened = false;
-		this.router.navigate([loc]);
+		this.appRoutingService.navigateTo(loc);
 	}
 
 	onCloseSideNav()

@@ -1,107 +1,42 @@
+@import 'custom-theme-test.scss';
+
 .mat-table {
     width: 95%;
-    border: 1px solid #31538f;
+    // border: 1px solid #31538f;
     margin: 0 auto;
 
-    .mat-form-field {
-        padding-left: 4px;
-        margin-left: 4px;
-
-        .mat-select-arrow {
-            color: #bf9014c4;
-        }
-
-        .mat-form-field-label {
-            color: #bf9014c4;
-        }
-
-        input::placeholder {
-            color: #bf9014c4;
-        }
-
-        .mat-input-element {
-            color: #bf9014c4;
-        }
-
-        .mat-form-field-label {
-            color: #bf9014c4;
-        }
-
-        .mat-form-field-underline {
-            background-color: #bf9014c4;
-        }
-
-        .mat-form-field-ripple {
-            background-color: #bf9014c4;
-        }
-
-        .mat-form-field-required-marker {
-            color: #bf9014c4;
-        }
-
-        .mat-select-value-text {
-            color: #bf9014c4;
-        }
-    }
-
-    .mat-form-field:hover {
-        .mat-select-arrow {
-            color: #bf9014;
-        }
-
-        .mat-form-field-label {
-            color: #bf9014;
-        }
-
-        input::placeholder {
-            color: #bf9014;
-        }
-
-        .mat-input-element {
-            color: #bf9014;
-        }
-
-        .mat-form-field-label {
-            color: #bf9014;
-        }
-
-        .mat-form-field-underline {
-            background-color: #bf9014;
-        }
-
-        .mat-form-field-ripple {
-            background-color: #bf9014;
-        }
-
-        .mat-form-field-required-marker {
-            color: #bf9014;
-        }
-
-        .mat-select-value-text {
-            color: #bf9014;
-        }
-    }
-
     .mat-header-cell {
-        background-color: #272f3c !important;
+        background-color: theme-color($my-app-theme, primary, 500) !important;
         color: #FFF;
-        border-left: 1px solid #c1c1c117 !important;
-        border-bottom: 1px solid #31538f !important;
+        border-left: 1px solid theme-color($my-app-theme, primary, 300) !important;
+        border-bottom: 1px solid theme-color($my-app-theme, primary, 300) !important;
         padding-left: 8px !important;
         font-size: 14px;
     }
 
     .mat-row:nth-child(odd) {
-        background-color: #262626 !important;
+        background-color: theme-color($my-app-theme, primary, 700) !important;
     }
 
     .mat-row:not(even) {
-        background-color: #272f3c !important;
+        background-color: theme-color($my-app-theme, primary, 500) !important;
     }
 
     .mat-cell {
-        color: #c1c1c1 !important;
-        border-left: 1px solid #c1c1c117;
+        color: #c1c1c1;
+        border-left: 1px solid theme-color($my-app-theme, primary, 300) !important;
         padding-left: 8px !important;
+    }
+
+    .table-link {
+        // color: #bf9014c4;
+        padding-left: 4px;
+        margin-left: 4px;
+    }
+
+    .table-link:hover {
+        // color: #bf9014;
+        text-decoration: underline;
+        cursor: pointer;
     }
 }

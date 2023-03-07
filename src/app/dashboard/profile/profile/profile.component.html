@@ -16,6 +16,7 @@
             <mat-label>EMAIL</mat-label>
             <input matInput formControlName="Email" placeholder="EMAIL" type="email" required>
         </mat-form-field>
-        <button type="button" mat-flat-button (click)="onSave_Click()" [disabled]="formGroup.invalid"> SAVE </button>
+        <button type="button" mat-flat-button (click)="onSave_Click()" color="primary" [disabled]="formGroup.invalid">
+            SAVE </button>
     </form>
 </div>

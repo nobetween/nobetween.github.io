@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -13,7 +14,7 @@ import { Course, CourseService } from 'src/app/services/course-service';
 	selector: 'app-courses',
 	templateUrl: './courses.component.html',
 	styleUrls: ['./courses.component.scss', '../../dashboard.component.scss'],
-	imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule, MatTableModule],
+	imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule, MatTableModule, MatButtonModule],
 	encapsulation: ViewEncapsulation.None
 })
 export class CoursesComponent implements OnInit
@@ -22,7 +23,7 @@ export class CoursesComponent implements OnInit
 
 	formGroup = new UntypedFormGroup({});
 
-	displayedColumns: string[] = ['action', 'coursename', 'numholes'];
+	displayedColumns: string[] = ['action', 'edit', 'coursename', 'numholes'];
 	dataSource: MatTableDataSource<Course>;//(this.courseService.getCourseList());
 	activeCourse!: Course;
 

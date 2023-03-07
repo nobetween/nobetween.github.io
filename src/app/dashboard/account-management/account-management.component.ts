@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -13,7 +14,7 @@ import { UserAccount, UserService } from 'src/app/services/user-service';
 	selector: 'app-account-management',
 	templateUrl: './account-management.component.html',
 	styleUrls: ['./account-management.component.scss', '../dashboard.component.scss'],
-	imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule, MatTableModule],
+	imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule, MatTableModule, MatButtonModule],
 	encapsulation: ViewEncapsulation.None
 })
 export class AccountManagementComponent implements OnInit
@@ -84,7 +85,7 @@ export class AccountManagementComponent implements OnInit
 		this.formGroup.get(['Email'])?.setValue(userAccount.email);
 		this.formGroup.get(['AccessLevel'])?.setValue(userAccount.access);
 
-		this.accountEnabled = this.activeUserAccount.status === 'Disabled' ? true : false;
+		this.accountEnabled = this.activeUserAccount.status === 'Disabled' ? false : true;
 	}
 
 	onAction_Click(action: string)

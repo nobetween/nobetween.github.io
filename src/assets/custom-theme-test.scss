@@ -1,0 +1,16 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$my-app-primary: mat.define-palette(mat.$indigo-palette); // inputs
+$my-app-accent: mat.define-palette(mat.$orange-palette); // buttons
+$my-app-warn: mat.define-palette(mat.$red-palette); // back/close/errors
+
+$my-app-theme: mat.define-dark-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+@include mat.all-component-themes($my-app-theme);
+
+@function theme-color($theme, $color, $hue: 'default') {
+    $theme-color: map_get($theme, $color);
+    @return mat.get-color-from-palette($theme-color, $hue);
+}

@@ -1,110 +1,55 @@
 @import './grid-styles.scss';
+@import 'custom-theme-test.scss';
 
 .mat-button {
     width: 200px;
-    color: #c1c1c1;
-
-    :hover {
-        color: #FFFFFF;
-    }
 }
 
 .mat-flat-button {
     width: 200px;
-    background-color: #272f3c;
-    color: #c1c1c1;
-
-    :hover {
-        color: #FFFFFF;
-    }
 }
 
-.mat-flat-button:disabled {
-    pointer-events: none;
-    background-color: rgba(0, 0, 0, 0.12);
-}
-
-.mat-flat-button:hover {
-    color: #FFFFFF;
-}
-
-.mat-form-field {
+mat-form-field {
     width: 200px;
-    font-size: 12px;
+    font-size: 12px !important;
     color: #FFFFFF;
+}
 
-    input::placeholder {
-        color: #c1c1c1;
-    }
+mat-sidenav-container {
+    height: 90%;
+    width: 100%;
+    background-color: theme-color($my-app-theme, primary, 900) !important;
 
-    .mat-input-element {
-        color: #c1c1c1;
-    }
-
-    .mat-form-field-label {
-        color: #c1c1c1;
-    }
-
-    .mat-form-field-underline {
-        background-color: #c1c1c1;
-    }
-
-    .mat-form-field-ripple {
-        background-color: #c1c1c1;
-    }
-
-    .mat-form-field-required-marker {
-        color: #c1c1c1;
-    }
-
-    .mat-select-value-text {
-        color: white;
+    mat-sidenav {
+        border-right: 1px solid theme-color($my-app-theme, primary, 300) !important;
+        background-color: theme-color($my-app-theme, primary, 700) !important;
+        position: fixed !important;
     }
 }
 
-.mat-form-field.mat-focused {
-    .mat-form-field-label {
-        color: #FFFFFF;
-    }
-
-    .mat-form-field-ripple {
-        background-color: #FFFFFF;
-        ;
-    }
-
-    .mat-form-field-required-marker {
-        color: #FFFFFF;
-        ;
-    }
-
-    .mat-input-element {
-        color: #FFFFFF;
-    }
+mat-list-item {
+    display: flex !important;
 }
 
+mat-expansion-panel {
+    background: theme-color($my-app-theme, primary, 700) !important;
+    box-shadow: none !important;
+    border-radius: 0px !important;
 
-.mat-form-field:hover {
-    .mat-form-field-label {
-        color: #FFFFFF;
+    mat-expansion-panel-header {
+        padding: 0 16px !important;
+        height: 40px !important;
+
+        .mat-expanded {
+            height: 40px !important;
+        }
+
+        mat-panel-title {
+            font-size: 12px !important;
+        }
     }
 
-    .mat-form-field-ripple {
-        background-color: #FFFFFF;
+    .mat-expansion-panel-body {
+        padding: 0 24px !important;
     }
-
-    .mat-form-field-required-marker {
-        color: #FFFFFF;
-    }
-
-    .mat-input-element {
-        color: #FFFFFF;
-    }
-}
-
-.mat-select-arrow {
-    color: #c1c1c1;
-}
-
-mat-icon {
-    color: #c1c1c1;
 }

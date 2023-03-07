@@ -1,14 +1,14 @@
-<div class="header-container" *ngIf="!showIcon">
+<div class="dashboard-header-container" *ngIf="!showIcon">
     <mat-icon class="golf-icon" (click)="showMenu()"> golf_course </mat-icon>
-    <span class="header-text"> {{ currentPage }} </span>
+    <span class="dashboard-header-title"> {{ currentPage }} </span>
 </div>
 
-<mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="sidenav-panel" (openedStart)="onOpenSideNav()"
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" (openedStart)="onOpenSideNav()"
         (closedStart)="onCloseSideNav()">
-        <mat-expansion-panel class="expansion-panel">
-            <mat-expansion-panel-header class="expansion-header">
-                <mat-panel-title class="expansion-title">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
                     {{currentUser.lastname}}, {{currentUser.firstname}}
                 </mat-panel-title>
             </mat-expansion-panel-header>
@@ -41,9 +41,9 @@
                 <span> Advertising </span>
             </mat-list-item>
         </mat-nav-list>
-        <mat-expansion-panel class="expansion-panel">
-            <mat-expansion-panel-header class="expansion-header">
-                <mat-panel-title class="expansion-title">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
                     Course / Club Layout
                 </mat-panel-title>
             </mat-expansion-panel-header>
@@ -80,9 +80,9 @@
                 </mat-list-item>
             </mat-nav-list>
         </mat-expansion-panel>
-        <mat-expansion-panel class="expansion-panel">
-            <mat-expansion-panel-header class="expansion-header">
-                <mat-panel-title class="expansion-title">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
                     Configuration & Preferences
                 </mat-panel-title>
             </mat-expansion-panel-header>
@@ -101,9 +101,9 @@
                 </mat-list-item>
             </mat-nav-list>
         </mat-expansion-panel>
-        <mat-expansion-panel class="expansion-panel">
-            <mat-expansion-panel-header class="expansion-header">
-                <mat-panel-title class="expansion-title">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
                     Administrator
                 </mat-panel-title>
             </mat-expansion-panel-header>
@@ -119,11 +119,11 @@
             </mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
-
     <mat-sidenav-content (click)="sidenav.close()">
-        <div class="header-container" *ngIf="showIcon">
-            <span class="header-text"> {{ currentPage }} </span>
+        <div class="dashboard-header-container" *ngIf="showIcon">
+            <span class="dashboard-header-title"> {{ currentPage }} </span>
         </div>
+
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

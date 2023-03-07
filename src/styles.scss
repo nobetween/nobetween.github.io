@@ -1,13 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
-@import '~@angular/material/theming';
-@include mat-core();
-$nobetween-app-primary: mat-palette($mat-green, A400);
-$nobetween-app-accent: mat-palette($mat-pink, A200, A100, A400);
-$nobetween-app-theme: mat-light-theme($nobetween-app-primary, $nobetween-app-accent);
-@include angular-material-theme($nobetween-app-theme);
-
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import './assets/custom-theme-test.scss';
 @import './assets/mat-override.scss';
 
 
@@ -17,7 +9,8 @@ body {
     margin: 0;
     height: 100%;
     width: 100%;
-    background-color: #262626;
+    background-color: theme-color($my-app-theme, primary, 900) !important;
+    ;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -27,12 +20,4 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: background-color 5000s;
     -webkit-text-fill-color: #fff !important;
-}
-
-// sets text color of primary buttons
-.mat-flat-button.mat-primary,
-.mat-raised-button.mat-primary,
-.mat-fab.mat-primary,
-.mat-mini-fab.mat-primary {
-    color: #FFFFFF;
 }

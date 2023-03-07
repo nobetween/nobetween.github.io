@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, Router } from "@angular/router";
 
 @Injectable({
     providedIn: 'root'
@@ -8,15 +8,35 @@ export class NavService
 {
     previousNavigation;
 
-    constructor(private router: Router)
+    constructor(private router: Router, public route: ActivatedRoute)
     {
-        this.previousNavigation = this.router.getCurrentNavigation()?.previousNavigation;
+        this.previousNavigation = router.getCurrentNavigation()?.previousNavigation;
     }
 
-    navigateToPreviousURL()
+    navigateTo(loc: string)
     {
-        const url = this.previousNavigation?.extras?.state?.['url'];
-        this.router.navigate([url], { state: { url: url } });
+        this.router.navigate([loc], { state: { url: loc } });
     }
 
+    public getRouteTitle(): string
+    {
+        return this.getRouteData('title');
+    }
+
+    private getRouteData(data: string): any
+    {
+        const root = this.router.routerState.snapshot.root;
+        return this.lastChild(root).data[data];
+    }
+
+    private lastChild(route: ActivatedRouteSnapshot): ActivatedRouteSnapshot
+    {
+        if (route.firstChild)
+        {
+            return this.lastChild(route.firstChild);
+        } else
+        {
+            return route;
+        }
+    }
 }

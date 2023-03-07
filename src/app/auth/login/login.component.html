@@ -1,4 +1,4 @@
-<div class="login-container">
+<div class="auth-container">
 	<form [formGroup]="formGroup" class="flex-container" autocomplete="off">
 		<mat-form-field appearance="standard">
 			<mat-label>EMAIL</mat-label>
@@ -10,10 +10,13 @@
 			<input matInput formControlName="Password" placeholder="PASSWORD" type="password" required>
 			<mat-icon matSuffix>lock</mat-icon>
 		</mat-form-field>
-		<button type="button" mat-flat-button (click)="onLogin_Click()" [disabled]="formGroup.invalid"> LOGIN </button>
-		<button type="button" mat-button class="font-size-sm" (click)="onRegister_Click()"> REGISTER NEW ACCOUNT
+		<button type="button" mat-flat-button color="primary" (click)="onLogin_Click()" [disabled]="formGroup.invalid">
+			LOGIN </button>
+		<button type="button" mat-button class="font-size-sm" color="primary" (click)="onRegister_Click()"> REGISTER NEW
+			ACCOUNT
 		</button>
-		<button type="button" mat-button class="font-size-sm" (click)="onForgotPassword_Click()"> FORGOT PASSWORD
+		<button type="button" mat-button class="font-size-sm" color="primary" (click)="onForgotPassword_Click()"> FORGOT
+			PASSWORD
 		</button>
 	</form>
 </div>

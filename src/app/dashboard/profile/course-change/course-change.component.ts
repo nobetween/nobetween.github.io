@@ -33,7 +33,7 @@ export class CourseChangeComponent implements OnInit
 		{ label: "Read-Only", value: "Read-Only" }
 	];
 
-	constructor(private navService: NavService) { }
+	constructor() { }
 
 	ngOnInit(): void
 	{
@@ -44,12 +44,12 @@ export class CourseChangeComponent implements OnInit
 
 	onUpdate_Click()
 	{
-		this.navService.navigateToPreviousURL();
+
 	}
 
 	onAdd_Click()
 	{
-		this.navService.navigateToPreviousURL();
+
 	}
 
 }
