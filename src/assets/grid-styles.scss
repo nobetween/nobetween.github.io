@@ -1,12 +1,12 @@
 @import 'themes';
 
-.mat-table {
+.mat-mdc-table {
     width: 95%;
     border: 1px solid theme-color($nobetween-app-theme, primary, 300) !important;
     ;
     margin: 0 auto;
 
-    .mat-header-cell {
+    .mat-mdc-header-cell {
         background-color: theme-color($nobetween-app-theme, primary, 900) !important;
         color: theme-color($nobetween-app-theme, primary, 50) !important;
         ;
@@ -16,15 +16,15 @@
         font-size: 14px;
     }
 
-    .mat-row:nth-child(odd) {
+    .mat-mdc-row:nth-child(odd) {
         background-color: theme-color($nobetween-app-theme, primary, 800) !important;
     }
 
-    .mat-row:not(even) {
+    .mat-mdc-row:not(even) {
         background-color: theme-color($nobetween-app-theme, primary, 900) !important;
     }
 
-    .mat-cell {
+    .mat-mdc-cell {
         color: theme-color($nobetween-app-theme, primary, 100) !important;
         border-left: 1px solid theme-color($nobetween-app-theme, primary, 300) !important;
         padding-left: 8px !important;

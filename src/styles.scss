@@ -17,12 +17,5 @@ body {
     color: theme-color($nobetween-app-theme, primary, 50) !important;
     background-color: theme-color($nobetween-app-theme, primary, 900) !important;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    transition: background-color 5000s;
-    -webkit-text-fill-color: theme-color($nobetween-app-theme, primary, 50) !important;
+    font-size: 12px;
 }

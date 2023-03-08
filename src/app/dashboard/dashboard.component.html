@@ -12,7 +12,7 @@
                     {{currentUser.lastname}}, {{currentUser.firstname}}
                 </mat-panel-title>
             </mat-expansion-panel-header>
-            <mat-nav-list dense>
+            <mat-nav-list dense class="nav-list">
                 <mat-list-item (click)="navTo('profile')">
                     <span> Profile </span>
                 </mat-list-item>
@@ -27,7 +27,7 @@
                 </mat-list-item>
             </mat-nav-list>
         </mat-expansion-panel>
-        <mat-nav-list dense>
+        <mat-nav-list dense class="nav-list">
             <mat-list-item (click)="navTo('home')">
                 <span> Home </span>
             </mat-list-item>
@@ -50,7 +50,7 @@
                     Course / Club Layout
                 </mat-panel-title>
             </mat-expansion-panel-header>
-            <mat-nav-list dense>
+            <mat-nav-list dense class="nav-list">
                 <mat-list-item (click)="navTo('course-layout/courses')">
                     <span> Courses </span>
                 </mat-list-item>
@@ -89,7 +89,7 @@
                     Configuration & Preferences
                 </mat-panel-title>
             </mat-expansion-panel-header>
-            <mat-nav-list dense>
+            <mat-nav-list dense class="nav-list">
                 <mat-list-item (click)="navTo('configuration/pin-location')">
                     <span> Pin Location </span>
                 </mat-list-item>
@@ -110,13 +110,13 @@
                     Administrator
                 </mat-panel-title>
             </mat-expansion-panel-header>
-            <mat-nav-list dense>
+            <mat-nav-list dense class="nav-list">
                 <mat-list-item (click)="navTo('administrator/account-management')">
                     <span> Account Management </span>
                 </mat-list-item>
             </mat-nav-list>
         </mat-expansion-panel>
-        <mat-nav-list dense>
+        <mat-nav-list dense class="nav-list">
             <mat-list-item (click)="navTo('login')">
                 <span> Logout </span>
             </mat-list-item>

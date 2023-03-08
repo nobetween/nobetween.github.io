@@ -17,6 +17,7 @@
 .dashboard-header-title {
     color: theme-color($nobetween-app-theme, primary, 50) !important;
     margin-left: 24px;
+    font-size: 14px;
 }
 
 .dashboard-container {
@@ -30,4 +31,8 @@
     color: theme-color($nobetween-app-theme, primary, 50) !important;
     margin-left: 8px;
     margin-top: 10px;
+}
+
+.nav-list {
+    padding: 0 !important;
 }
