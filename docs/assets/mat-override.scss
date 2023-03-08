@@ -1,11 +1,11 @@
 @import 'themes';
 @import './grid-styles.scss';
 
-.mat-button {
+.mdc-button {
     width: 200px;
 }
 
-.mat-flat-button {
+.mdc-flat-button {
     width: 200px;
 }
 
@@ -13,27 +13,25 @@ mat-form-field {
     width: 200px;
     font-size: 12px !important;
     color: theme-color($nobetween-app-theme, primary, 50) !important;
-}
 
-.mat-form-field.mat-focused {
-    .mat-form-field-label {
-        color: theme-color($nobetween-app-theme, primary, 300) !important;
+    .mdc-notched-outline__leading {
+        border-color: theme-color($nobetween-app-theme, primary, 300) !important;
     }
 
-    .mat-form-field-ripple {
-        background-color: theme-color($nobetween-app-theme, primary, 300) !important;
+    .mdc-notched-outline__notch {
+        border-color: theme-color($nobetween-app-theme, primary, 300) !important;
+
+        .mdc-floating-label {
+            color: theme-color($nobetween-app-theme, primary, 300) !important;
+        }
     }
 
-    .mat-form-field-required-marker {
-        color: theme-color($nobetween-app-theme, warn, 500) !important;
+    .mdc-notched-outline__trailing {
+        border-color: theme-color($nobetween-app-theme, primary, 300) !important;
     }
 
-    .mat-input-element {
-        color: theme-color($nobetween-app-theme, primary, 50) !important;
-    }
-
-    .mat-select-arrow {
-        color: theme-color($nobetween-app-theme, primary, 100) !important;
+    input {
+        caret-color: white !important;
     }
 }
 
@@ -60,18 +58,14 @@ mat-expansion-panel {
 
     mat-expansion-panel-header {
         padding: 0 16px !important;
-        height: 40px !important;
-
-        .mat-expanded {
-            height: 40px !important;
-        }
 
         mat-panel-title {
             font-size: 12px !important;
         }
     }
+}
 
-    .mat-expansion-panel-body {
-        padding: 0 24px !important;
-    }
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s !important;
 }

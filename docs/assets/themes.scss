@@ -33,7 +33,11 @@ $nobetween-app-primary: mat.define-palette($nobetween-primary-range); // inputs
 $nobetween-app-accent: mat.define-palette(mat.$orange-palette); // buttons
 $nobetween-app-warn: mat.define-palette(mat.$red-palette); // back/close/errors
 
-$nobetween-app-theme: mat.define-dark-theme($nobetween-app-primary, $nobetween-app-accent, $nobetween-app-warn);
+$nobetween-app-theme: mat.define-dark-theme((color: (primary: $nobetween-app-primary,
+                accent: $nobetween-app-accent,
+                warn: $nobetween-app-warn,
+            ),
+        ));
 
 @function theme-color($theme, $color, $hue: 'default') {
     $theme-color: map_get($theme, $color);
