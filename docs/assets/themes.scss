@@ -1,8 +1,6 @@
 @use "@angular/material" as mat;
 
-@include mat.core();
-
-$my-primary-range: (
+$nobetween-primary-range: (
     50 : #FFFFFF,
     100 : #c1c1c1,
     200 : #FFFFFF,
@@ -31,13 +29,11 @@ $my-primary-range: (
 
 //$my-app-primary: mat.define-palette(mat.$blue-palette); // inputs
 
-$my-app-primary: mat.define-palette($my-primary-range); // inputs
-$my-app-accent: mat.define-palette(mat.$orange-palette); // buttons
-$my-app-warn: mat.define-palette(mat.$red-palette); // back/close/errors
+$nobetween-app-primary: mat.define-palette($nobetween-primary-range); // inputs
+$nobetween-app-accent: mat.define-palette(mat.$orange-palette); // buttons
+$nobetween-app-warn: mat.define-palette(mat.$red-palette); // back/close/errors
 
-$my-app-theme: mat.define-dark-theme($my-app-primary, $my-app-accent, $my-app-warn);
-
-@include mat.all-component-themes($my-app-theme);
+$nobetween-app-theme: mat.define-dark-theme($nobetween-app-primary, $nobetween-app-accent, $nobetween-app-warn);
 
 @function theme-color($theme, $color, $hue: 'default') {
     $theme-color: map_get($theme, $color);

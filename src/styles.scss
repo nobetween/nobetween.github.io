@@ -1,7 +1,12 @@
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import './assets/custom-theme-test.scss';
-@import './assets/mat-override.scss';
+@use "../node_modules/@angular/material" as mat;
+@import './assets/themes.scss';
 
+@include mat.core();
+
+@include mat.all-component-themes($nobetween-app-theme);
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import './assets/mat-override.scss';
 
 html,
 body {
@@ -9,9 +14,8 @@ body {
     margin: 0;
     height: 100%;
     width: 100%;
-    color: theme-color($my-app-theme, primary, 50) !important;
-    background-color: theme-color($my-app-theme, primary, 900) !important;
-    ;
+    color: theme-color($nobetween-app-theme, primary, 50) !important;
+    background-color: theme-color($nobetween-app-theme, primary, 900) !important;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -20,5 +24,5 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: background-color 5000s;
-    -webkit-text-fill-color: theme-color($my-app-theme, primary, 50) !important;
+    -webkit-text-fill-color: theme-color($nobetween-app-theme, primary, 50) !important;
 }

@@ -1,4 +1,4 @@
-@import '../assets/custom-theme-test.scss';
+@import '../assets/themes.scss';
 
 .auth-container {
     width: 100%;
@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: 1px solid theme-color($my-app-theme, primary, 400) !important;
+    border: 1px solid theme-color($nobetween-app-theme, primary, 400) !important;
     padding: 16px;
     margin: 4px;
 }
@@ -49,5 +49,5 @@
 }
 
 .nobetween-info {
-    color: theme-color($my-app-theme, primary, 100) !important;
+    color: theme-color($nobetween-app-theme, primary, 100) !important;
 }
