@@ -22,7 +22,6 @@
 .flex-container {
     display: flex;
     gap: 7px 7px;
-    padding: 3px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -30,6 +29,19 @@
     border: 1px solid theme-color($my-app-theme, primary, 400) !important;
     padding: 16px;
     margin: 4px;
+}
+
+.borderless-flex-container {
+    display: flex;
+    gap: 7px 7px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 .font-size-sm {

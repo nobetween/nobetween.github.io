@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
 
 @Injectable({
     providedIn: 'root'
@@ -48,11 +47,8 @@ export class CourseService
 
     removeCourse(course: Course)
     {
-        console.log('course', course);
         const index = this._testCourses.indexOf(course);
-        console.log('index', index);
         this._testCourses.splice(index, 1);
-        console.log('_testCourses', this._testCourses);
     }
 }
 

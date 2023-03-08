@@ -1,0 +1,95 @@
+<div class="form-container">
+    <form [formGroup]="formGroup_multi" autocomplete="off" *ngIf="!showGrid">
+        <div class="dashboard-container">
+            <span class="dashboard-container-title"> CREATE MULTIPLE HOLES
+            </span>
+        </div>
+        <div class="flex-container">
+            <mat-form-field appearance="standard">
+                <mat-label>COURSE NAME</mat-label>
+                <mat-select formControlName="CourseName">
+                    <mat-option *ngFor="let course of vmCourses" [value]="course.id">
+                        {{ course.coursename }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>TOTAL NUMBER OF HOLES</mat-label>
+                <input matInput formControlName="NumOfHoles" placeholder="TOTAL NUMBER OF HOLES" required type="number">
+            </mat-form-field>
+            <button type="button" mat-flat-button color="primary" (click)="onSaveMulti_Click()"
+                [disabled]="formGroup_multi.invalid">
+                SAVE
+            </button>
+        </div>
+    </form>
+
+    <form [formGroup]="formGroup_single" autocomplete="off" *ngIf="!showGrid">
+        <div class="dashboard-container">
+            <span class="dashboard-container-title"> CREATE A SINGLE HOLE
+            </span>
+        </div>
+        <div class="flex-container">
+            <mat-form-field appearance="standard">
+                <mat-label>COURSE NAME</mat-label>
+                <mat-select formControlName="CourseName">
+                    <mat-option *ngFor="let course of vmCourses" [value]="course.id">
+                        {{ course.coursename }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>HOLE NUMBER</mat-label>
+                <input matInput formControlName="HoleNumber" placeholder="HOLE NUMBER" required type="number">
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>HOLE NAME</mat-label>
+                <input matInput formControlName="HoleName" placeholder="HOLE NAME (optional & rare)">
+            </mat-form-field>
+            <button type="button" mat-flat-button color="primary" (click)="onSaveSingle_Click()"
+                [disabled]="formGroup_single.invalid">
+                SAVE
+            </button>
+        </div>
+    </form>
+
+    <div class="borderless-flex-container" *ngIf="!showGrid">
+        <button type="button" mat-button class="font-size-sm" (click)="onBack_Click()">
+            BACK TO GRID
+        </button>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" *ngIf="showGrid">
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef class="action-column">
+                <button type="button" mat-flat-button color="primary" (click)="onAdd_Click()"> ADD HOLE </button>
+            </th>
+            <td mat-cell *matCellDef="let element">
+                <button type="button" mat-button color="error" (click)="onDelete_Click(element)"> DELETE </button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="coursename">
+            <th mat-header-cell *matHeaderCellDef> Course Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.coursename}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="holenum">
+            <th mat-header-cell *matHeaderCellDef> Holes # </th>
+            <td mat-cell *matCellDef="let element"> {{element.holenum}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="center">
+            <th mat-header-cell *matHeaderCellDef> Center </th>
+            <td mat-cell *matCellDef="let element"> {{element.center}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gpscoord">
+            <th mat-header-cell *matHeaderCellDef> GPS Coord. </th>
+            <td mat-cell *matCellDef="let element"> {{element.gpscoord}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>

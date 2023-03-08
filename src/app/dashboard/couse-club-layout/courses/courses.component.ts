@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatOptionModule } from '@angular/material/core';
@@ -24,10 +24,10 @@ export class CoursesComponent implements OnInit
 	formGroup = new UntypedFormGroup({});
 
 	displayedColumns: string[] = ['action', 'edit', 'coursename', 'numholes'];
-	dataSource: MatTableDataSource<Course>;//(this.courseService.getCourseList());
+	dataSource: MatTableDataSource<Course>;
 	activeCourse!: Course;
 
-	constructor(public courseService: CourseService, private changeDetectorRefs: ChangeDetectorRef)
+	constructor(public courseService: CourseService)
 	{
 		this.dataSource = new MatTableDataSource<Course>();
 		this.dataSource.data = this.courseService.getCourseList();

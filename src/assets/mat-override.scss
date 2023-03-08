@@ -12,7 +12,29 @@
 mat-form-field {
     width: 200px;
     font-size: 12px !important;
-    color: theme-color($my-app-theme, primary, 100) !important;
+    color: theme-color($my-app-theme, primary, 50) !important;
+}
+
+.mat-form-field.mat-focused {
+    .mat-form-field-label {
+        color: theme-color($my-app-theme, primary, 300) !important;
+    }
+
+    .mat-form-field-ripple {
+        background-color: theme-color($my-app-theme, primary, 300) !important;
+    }
+
+    .mat-form-field-required-marker {
+        color: theme-color($my-app-theme, warn, 500) !important;
+    }
+
+    .mat-input-element {
+        color: theme-color($my-app-theme, primary, 50) !important;
+    }
+
+    .mat-select-arrow {
+        color: theme-color($my-app-theme, primary, 100) !important;
+    }
 }
 
 mat-sidenav-container {
