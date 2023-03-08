@@ -1,6 +1,6 @@
 <form [formGroup]="formGroup" class="form-container" autocomplete="off">
     <div class="flex-container">
-        <mat-form-field appearance="standard">
+        <mat-form-field>
             <mat-label>COURSE</mat-label>
             <mat-select formControlName="Course">
                 <mat-option *ngFor="let course of vmCourse" [value]="course.value">
@@ -17,12 +17,12 @@
         </span>
     </div>
     <div class="flex-container">
-        <mat-form-field appearance="standard">
+        <mat-form-field>
             <mat-label>Course/Club Code</mat-label>
             <input matInput formControlName="ClubCode" placeholder="COURSE/CLUB CODE">
         </mat-form-field>
 
-        <mat-form-field appearance="standard">
+        <mat-form-field>
             <mat-label>ACCESS LEVEL</mat-label>
             <mat-select formControlName="AccessLevel">
                 <mat-option *ngFor="let level of vmAcess" [value]="level.value">

@@ -5,14 +5,14 @@
             </span>
         </div>
         <div class="flex-container">
-            <mat-form-field appearance="standard">
+            <mat-form-field>
                 <mat-label>COURSE NAME</mat-label>
                 <mat-select formControlName="CourseName">
                     <mat-option *ngFor="let course of vmCourses" [value]="course.id">
                         {{ course.coursename }}</mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field appearance="standard">
+            <mat-form-field>
                 <mat-label>TOTAL NUMBER OF HOLES</mat-label>
                 <input matInput formControlName="NumOfHoles" placeholder="TOTAL NUMBER OF HOLES" required type="number">
             </mat-form-field>
@@ -29,18 +29,18 @@
             </span>
         </div>
         <div class="flex-container">
-            <mat-form-field appearance="standard">
+            <mat-form-field>
                 <mat-label>COURSE NAME</mat-label>
                 <mat-select formControlName="CourseName">
                     <mat-option *ngFor="let course of vmCourses" [value]="course.id">
                         {{ course.coursename }}</mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field appearance="standard">
+            <mat-form-field>
                 <mat-label>HOLE NUMBER</mat-label>
                 <input matInput formControlName="HoleNumber" placeholder="HOLE NUMBER" required type="number">
             </mat-form-field>
-            <mat-form-field appearance="standard">
+            <mat-form-field>
                 <mat-label>HOLE NAME</mat-label>
                 <input matInput formControlName="HoleName" placeholder="HOLE NAME (optional & rare)">
             </mat-form-field>

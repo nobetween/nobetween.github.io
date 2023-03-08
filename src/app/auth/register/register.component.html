@@ -2,35 +2,35 @@
 	<span class="nobetween-info"> Coordinate with your course administrator for the correct Course/Club Code
 	</span>
 	<form [formGroup]="formGroup" class="flex-container" autocomplete="off">
-		<mat-form-field appearance="standard">
+		<mat-form-field>
 			<mat-label>COURSE/CLUB CODE</mat-label>
 			<input matInput formControlName="ClubCode" placeholder="COURSE/CLUB CODE">
 		</mat-form-field>
-		<mat-form-field appearance="standard">
+		<mat-form-field>
 			<mat-label>FIRST NAME</mat-label>
 			<input matInput formControlName="FirstName" placeholder="FIRST NAME" required>
 		</mat-form-field>
-		<mat-form-field appearance="standard">
+		<mat-form-field>
 			<mat-label>LAST NAME</mat-label>
 			<input matInput formControlName="LastName" placeholder="LAST NAME" required>
 		</mat-form-field>
-		<mat-form-field appearance="standard">
+		<mat-form-field>
 			<mat-label>PHONE NUMBER</mat-label>
 			<input matInput formControlName="PhoneNumber" placeholder="PHONE NUMBER" type="tel">
 		</mat-form-field>
-		<mat-form-field appearance="standard">
+		<mat-form-field>
 			<mat-label>EMAIL</mat-label>
 			<input matInput formControlName="Email" placeholder="EMAIL" type="email" required>
 		</mat-form-field>
-		<mat-form-field appearance="standard">
+		<mat-form-field>
 			<mat-label>PASSWORD</mat-label>
 			<input matInput formControlName="Password" placeholder="PASSWORD" type="password" required>
 		</mat-form-field>
-		<mat-form-field appearance="standard">
+		<mat-form-field>
 			<mat-label>CONFIRM PASSWORD</mat-label>
 			<input matInput formControlName="PasswordConfirm" placeholder="CONFIRM PASSWORD" type="password" required>
 		</mat-form-field>
-		<mat-form-field appearance="standard">
+		<mat-form-field>
 			<mat-label>ACCESS LEVEL</mat-label>
 			<mat-select formControlName="AccessLevel">
 				<mat-option *ngFor="let level of vmAcess" [value]="level.value">

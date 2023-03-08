@@ -5,23 +5,23 @@
     </div>
     <form [formGroup]="formGroup" autocomplete="off" *ngIf="!showGrid">
         <div class="flex-container">
-            <mat-form-field appearance="standard">
+            <mat-form-field>
                 <mat-label>FIRST NAME</mat-label>
                 <input matInput formControlName="FirstName" placeholder="FIRST NAME" required>
             </mat-form-field>
-            <mat-form-field appearance="standard">
+            <mat-form-field>
                 <mat-label>LAST NAME</mat-label>
                 <input matInput formControlName="LastName" placeholder="LAST NAME" required>
             </mat-form-field>
-            <mat-form-field appearance="standard">
+            <mat-form-field>
                 <mat-label>PHONE NUMBER</mat-label>
                 <input matInput formControlName="PhoneNumber" placeholder="PHONE NUMBER" type="tel">
             </mat-form-field>
-            <mat-form-field appearance="standard">
+            <mat-form-field>
                 <mat-label>EMAIL</mat-label>
                 <input matInput formControlName="Email" placeholder="EMAIL" type="email" required>
             </mat-form-field>
-            <mat-form-field appearance="standard">
+            <mat-form-field>
                 <mat-label>ACCESS LEVEL</mat-label>
                 <mat-select formControlName="AccessLevel">
                     <mat-option *ngFor="let level of vmAcess" [value]="level.value">
@@ -53,7 +53,7 @@
         <ng-container matColumnDef="statuslink">
             <th mat-header-cell *matHeaderCellDef class="action-column">
                 <form [formGroup]="formGroup" autocomplete="off">
-                    <mat-form-field appearance="standard" *ngIf="showGrid">
+                    <mat-form-field *ngIf="showGrid">
                         <mat-label>FILTER: {{ activeFilter }} </mat-label>
                         <mat-select formControlName="Filter">
                             <mat-option *ngFor="let filter of vmFilters" [value]="filter.value">
