@@ -9,6 +9,7 @@ body {
     margin: 0;
     height: 100%;
     width: 100%;
+    color: theme-color($my-app-theme, primary, 50) !important;
     background-color: theme-color($my-app-theme, primary, 900) !important;
     ;
     font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -19,5 +20,5 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: background-color 5000s;
-    -webkit-text-fill-color: #fff !important;
+    -webkit-text-fill-color: theme-color($my-app-theme, primary, 50) !important;
 }

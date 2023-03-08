@@ -1,19 +1,21 @@
+@import '/src/assets/custom-theme-test.scss';
+
 .golf-icon {
     margin: 8px;
     cursor: pointer;
-    color: #FFFFFF;
+    color: theme-color($my-app-theme, primary, 50) !important;
 }
 
 .dashboard-header-container {
     vertical-align: middle;
     display: flex;
     align-items: center;
-    color: #FFFFFF;
+    color: theme-color($my-app-theme, primary, 50) !important;
     height: 40px;
 }
 
 .dashboard-header-title {
-    color: #FFFFFF;
+    color: theme-color($my-app-theme, primary, 50) !important;
     margin-left: 24px;
 }
 
@@ -25,7 +27,7 @@
 }
 
 .dashboard-container-title {
-    color: #FFFFFF;
+    color: theme-color($my-app-theme, primary, 50) !important;
     margin-left: 8px;
     margin-top: 10px;
 }

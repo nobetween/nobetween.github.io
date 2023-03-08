@@ -42,7 +42,7 @@
                 *ngIf="!accountEnabled"> ENABLE ACCOUNT
             </button>
 
-            <button type="button" mat-flat-button color="warn" (click)="onBack_Click()">
+            <button type="button" mat-button class="font-size-sm" (click)="onBack_Click()">
                 BACK TO GRID
             </button>
         </div>
@@ -51,7 +51,7 @@
     <table mat-table [dataSource]="dataSource" *ngIf="showGrid">
 
         <ng-container matColumnDef="statuslink">
-            <th mat-header-cell *matHeaderCellDef>
+            <th mat-header-cell *matHeaderCellDef class="action-column">
                 <form [formGroup]="formGroup" autocomplete="off">
                     <mat-form-field appearance="standard" *ngIf="showGrid">
                         <mat-label>FILTER: {{ activeFilter }} </mat-label>

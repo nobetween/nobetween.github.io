@@ -12,7 +12,7 @@
 mat-form-field {
     width: 200px;
     font-size: 12px !important;
-    color: #FFFFFF;
+    color: theme-color($my-app-theme, primary, 100) !important;
 }
 
 mat-sidenav-container {
@@ -22,7 +22,7 @@ mat-sidenav-container {
 
     mat-sidenav {
         border-right: 1px solid theme-color($my-app-theme, primary, 300) !important;
-        background-color: theme-color($my-app-theme, primary, 700) !important;
+        background-color: theme-color($my-app-theme, primary, 500) !important;
         position: fixed !important;
     }
 }
@@ -32,7 +32,7 @@ mat-list-item {
 }
 
 mat-expansion-panel {
-    background: theme-color($my-app-theme, primary, 700) !important;
+    background: theme-color($my-app-theme, primary, 500) !important;
     box-shadow: none !important;
     border-radius: 0px !important;
 

@@ -1,5 +1,5 @@
 .horizontal-shake {
-    animation: horizontal-shaking 0.35s infinite;
+    animation: horizontal-shaking 0.35s 10ms;
 }
 
 @keyframes horizontal-shaking {

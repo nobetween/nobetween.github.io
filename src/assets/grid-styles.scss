@@ -2,12 +2,14 @@
 
 .mat-table {
     width: 95%;
-    // border: 1px solid #31538f;
+    border: 1px solid theme-color($my-app-theme, primary, 300) !important;
+    ;
     margin: 0 auto;
 
     .mat-header-cell {
-        background-color: theme-color($my-app-theme, primary, 500) !important;
-        color: #FFF;
+        background-color: theme-color($my-app-theme, primary, 900) !important;
+        color: theme-color($my-app-theme, primary, 50) !important;
+        ;
         border-left: 1px solid theme-color($my-app-theme, primary, 300) !important;
         border-bottom: 1px solid theme-color($my-app-theme, primary, 300) !important;
         padding-left: 8px !important;
@@ -15,28 +17,20 @@
     }
 
     .mat-row:nth-child(odd) {
-        background-color: theme-color($my-app-theme, primary, 700) !important;
+        background-color: theme-color($my-app-theme, primary, 800) !important;
     }
 
     .mat-row:not(even) {
-        background-color: theme-color($my-app-theme, primary, 500) !important;
+        background-color: theme-color($my-app-theme, primary, 900) !important;
     }
 
     .mat-cell {
-        color: #c1c1c1;
+        color: theme-color($my-app-theme, primary, 100) !important;
         border-left: 1px solid theme-color($my-app-theme, primary, 300) !important;
         padding-left: 8px !important;
     }
 
-    .table-link {
-        // color: #bf9014c4;
-        padding-left: 4px;
-        margin-left: 4px;
-    }
-
-    .table-link:hover {
-        // color: #bf9014;
-        text-decoration: underline;
-        cursor: pointer;
+    .action-column {
+        width: 208px !important;
     }
 }
