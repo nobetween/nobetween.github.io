@@ -7,8 +7,8 @@ export class HoleService
 {
     private _testHoles: Hole[] = [
         { id: 0, coursename: 'Graywolf', holenum: 1, center: true, gpscoord: true }
-        , { id: 1, coursename: 'Graywolf ', holenum: 2, center: true, gpscoord: false }
-        , { id: 2, coursename: 'Graywolf ', holenum: 3, center: true, gpscoord: true }
+        , { id: 1, coursename: 'Graywolf', holenum: 2, center: true, gpscoord: false }
+        , { id: 2, coursename: 'Graywolf', holenum: 3, center: true, gpscoord: true }
     ];
 
     private _id_index = 1;
@@ -48,4 +48,5 @@ export interface Hole
     holenum: Number;
     center: boolean;
     gpscoord: boolean;
+    holename?: string;
 }

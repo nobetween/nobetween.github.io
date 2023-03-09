@@ -1,4 +1,6 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+//import { Subject, Observable, takeUntil, map } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -13,10 +15,28 @@ export class CourseService
 
     private _id_index = 1;
 
-    constructor()
+    constructor(private http: HttpClient)
     {
+        /*         const path = 'https://nobetween.com/api/Login/Login';
+                const formData: any = new FormData();
+                formData.append('email', 'lehmandan500@gmail.com');
+                formData.append('pw', '1111');
+                this.http.post(path, formData, { responseType: 'blob', params: formData })
+                    .subscribe(response =>
+                    {
+                        if (response)
+                        {
+                            console.log('response', response)
+                        }
+                    },
+                        error => console.log('ERROR = ', error)
+                    ); */
 
+        //fetch('https://nobetween.com/api/Login/Login?email={lehmandan500@gmail.com}&pw={1111}');
     }
+
+
+
 
     addCourse(course: Course)
     {
