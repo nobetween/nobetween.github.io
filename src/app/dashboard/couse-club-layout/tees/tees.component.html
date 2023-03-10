@@ -1,0 +1,82 @@
+<div class="form-container">
+    <form [formGroup]="formGroup" autocomplete="off" *ngIf="showGrid">
+        <mat-form-field>
+            <mat-label>FILTER BY COURSE</mat-label>
+            <mat-select formControlName="CourseName" placeholder="FILTER BY COURSE"
+                (selectionChange)="onFilterCourse_Change($event)">
+                <mat-option *ngFor="let course of vmCourses" [value]="course.coursename">
+                    {{ course.coursename }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+
+    <form [formGroup]="formGroup" autocomplete="off" *ngIf="!showGrid">
+        <div class="dashboard-container">
+            <span class="dashboard-container-title"> CREATE NEW TEE
+            </span>
+        </div>
+        <div class="flex-container">
+            <mat-form-field>
+                <mat-label>TEE BOX ID</mat-label>
+                <input matInput formControlName="TeeBoxID" placeholder="Tee Box ID" required type="number">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>COURSE NAME</mat-label>
+                <mat-select formControlName="CourseName" required placeholder="Course Name">
+                    <mat-option *ngFor="let course of vmCourses" [value]="course.coursename">
+                        {{ course.coursename }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>COLOR</mat-label>
+                <input matInput formControlName="Color" placeholder="Color" required>
+            </mat-form-field>
+
+            <button type="button" mat-flat-button color="primary" (click)="onSave_Click()"
+                [disabled]="formGroup.invalid">
+                SAVE
+            </button>
+
+            <button type="button" mat-button class="font-size-sm" (click)="onBack_Click()">
+                BACK TO GRID
+            </button>
+        </div>
+    </form>
+
+    <table mat-table [dataSource]="dataSource" *ngIf="showGrid">
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef class="action-column">
+                <button type="button" mat-flat-button color="primary" (click)="onAdd_Click()"> ADD TEE </button>
+            </th>
+            <td mat-cell *matCellDef="let element" [ngClass]="{'table-cell-red': !element.enabled}">
+                <button type="button" mat-button color="error" (click)="onDelete_Click(element)"> DELETE </button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef class="action-column"> </th>
+            <td mat-cell *matCellDef="let element" [ngClass]="{'table-cell-red': !element.enabled}">
+                <button type="button" mat-button color="accent" (click)="onEdit_Click(element)"> <span
+                        *ngIf="element.enabled"> Disable </span> <span *ngIf="!element.enabled"> Enable </span>
+                </button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="teeboxid">
+            <th mat-header-cell *matHeaderCellDef> Tee Box ID </th>
+            <td mat-cell *matCellDef="let element" [ngClass]="{'table-cell-red': !element.enabled}">
+                {{element.teebox_id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="color">
+            <th mat-header-cell *matHeaderCellDef> Color </th>
+            <td mat-cell *matCellDef="let element" [ngClass]="{'table-cell-red': !element.enabled}"> {{element.color}}
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
