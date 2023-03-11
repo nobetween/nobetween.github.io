@@ -2,7 +2,7 @@
     <form [formGroup]="formGroup" autocomplete="off" *ngIf="showGrid">
         <mat-form-field>
             <mat-label>FILTER BY COURSE</mat-label>
-            <mat-select formControlName="CourseName" placeholder="FILTER BY COURSE"
+            <mat-select formControlName="CourseNameFilter" placeholder="FILTER BY COURSE"
                 (selectionChange)="onFilterCourse_Change($event)">
                 <mat-option *ngFor="let course of vmCourses" [value]="course.coursename">
                     {{ course.coursename }}</mat-option>

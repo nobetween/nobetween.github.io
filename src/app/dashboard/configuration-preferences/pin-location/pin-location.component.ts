@@ -9,7 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 	imports: [CommonModule],
 	encapsulation: ViewEncapsulation.None
 })
-export class PinLocationComponent implements OnInit
+export class PinLocationComponentConfig implements OnInit
 {
 
 	constructor() { }

@@ -43,6 +43,7 @@ export class TeesComponent implements OnInit
 		this.formGroup.addControl('TeeBoxID', new UntypedFormControl());
 		this.formGroup.addControl('Color', new UntypedFormControl());
 		this.formGroup.addControl('CourseName', new UntypedFormControl());
+		this.formGroup.addControl('CourseNameFilter', new UntypedFormControl());
 	}
 
 	onSave_Click()
