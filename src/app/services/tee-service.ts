@@ -39,25 +39,15 @@ export class TeeService
 
     }
 
-    addTee(tee: Tee)
-    {
-        this._testTees.push(tee);
-    }
-
-    getTees() 
-    {
-        return this._testTees;
-    }
-
-    getTeeLocations() 
-    {
-        return this._testTeeLocations;
-    }
-
     getNewTeeID()
     {
         this._id_index++;
         return this._id_index;
+    }
+
+    addTee(tee: Tee)
+    {
+        this._testTees.push(tee);
     }
 
     updateTee(tee: Tee)
@@ -76,6 +66,18 @@ export class TeeService
         const index = this._testTees.indexOf(tee);
         this._testTees.splice(index, 1);
     }
+
+    getTees() 
+    {
+        return this._testTees;
+    }
+
+    getTeeLocations() 
+    {
+        return this._testTeeLocations;
+    }
+
+
 }
 
 export interface Tee
