@@ -10,7 +10,6 @@
 }
 
 mat-form-field {
-    width: 200px;
     font-size: 12px !important;
     color: theme-color($nobetween-app-theme, primary, 50) !important;
 
@@ -35,9 +34,11 @@ mat-form-field {
     }
 }
 
+.hide-hint .mat-mdc-form-field-subscript-wrapper {
+    display: none !important;
+}
+
 mat-sidenav-container {
-    height: 90%;
-    width: 100%;
     background-color: theme-color($nobetween-app-theme, primary, 900) !important;
 
     mat-sidenav {
