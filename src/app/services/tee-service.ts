@@ -32,6 +32,21 @@ export class TeeService
         , { id: 17, coursename: 'Graywolf', holeNum: 18, g_a: 1, b: 2, w: 3, g_b: 4, r: 5 }
     ];
 
+    private _testTeeTimes: TeeTime[] = [
+        { id: 0, isclosed: true, month: 'January', earliest: '', latest: '', intervals: '' }
+        , { id: 1, isclosed: true, month: 'February', earliest: '', latest: '', intervals: '' }
+        , { id: 2, isclosed: false, month: 'March', earliest: '07:00', latest: '18:30', intervals: '00:12' }
+        , { id: 3, isclosed: false, month: 'April', earliest: '07:00', latest: '18:30', intervals: '00:12' }
+        , { id: 4, isclosed: false, month: 'May', earliest: '07:00', latest: '18:30', intervals: '00:12' }
+        , { id: 5, isclosed: false, month: 'June', earliest: '07:00', latest: '18:30', intervals: '00:12' }
+        , { id: 6, isclosed: false, month: 'July', earliest: '07:00', latest: '18:30', intervals: '00:12' }
+        , { id: 7, isclosed: false, month: 'August', earliest: '07:00', latest: '18:30', intervals: '00:12' }
+        , { id: 8, isclosed: false, month: 'September', earliest: '08:00', latest: '17:00', intervals: '00:12' }
+        , { id: 9, isclosed: false, month: 'October', earliest: '08:00', latest: '17:00', intervals: '00:12' }
+        , { id: 10, isclosed: true, month: 'November', earliest: '', latest: '', intervals: '' }
+        , { id: 11, isclosed: true, month: 'December', earliest: '', latest: '', intervals: '' }
+    ];
+
     private _id_index = 1;
 
     constructor()
@@ -77,6 +92,21 @@ export class TeeService
         return this._testTeeLocations;
     }
 
+    getTeeTimes()
+    {
+        return this._testTeeTimes;
+    }
+
+    updateTeeTime(teeTime: TeeTime)
+    {
+        this._testTeeTimes.forEach(tempTeeTime =>
+        {
+            if (tempTeeTime.id === teeTime.id)
+            {
+                tempTeeTime = teeTime;
+            }
+        });
+    }
 
 }
 
@@ -99,4 +129,14 @@ export interface TeeLocation
     w: number;
     g_b: number;
     r: number;
+}
+
+export interface TeeTime
+{
+    id: Number;
+    isclosed: boolean;
+    month: string;
+    earliest: string;
+    latest: string;
+    intervals: string;
 }
