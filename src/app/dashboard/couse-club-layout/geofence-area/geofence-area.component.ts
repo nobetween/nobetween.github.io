@@ -29,7 +29,7 @@ export class GeofenceAreaComponent implements OnInit
 	vmHoles: Hole[];
 	vmGeofenceTypes: GeofenceType[];
 
-	displayedColumns: string[] = ['action', 'edit', 'type'];
+	displayedColumns: string[] = ['action', 'edit', 'geofencetype'];
 	dataSource: MatTableDataSource<GeofenceArea>;
 
 	activeGeofenceArea!: GeofenceArea;

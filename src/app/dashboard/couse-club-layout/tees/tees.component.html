@@ -1,6 +1,6 @@
 <div class="form-container">
     <form [formGroup]="formGroup" autocomplete="off" *ngIf="showGrid">
-        <mat-form-field>
+        <mat-form-field class="hide-hint">
             <mat-label>FILTER BY COURSE</mat-label>
             <mat-select formControlName="CourseNameFilter" placeholder="FILTER BY COURSE"
                 (selectionChange)="onFilterCourse_Change($event)">

@@ -1,5 +1,9 @@
 <div class="form-container">
     <form [formGroup]="formGroup" autocomplete="off" *ngIf="!showGrid">
+        <div class="dashboard-container">
+            <span class="dashboard-container-title"> {{ activeTeeTime.month }}
+            </span>
+        </div>
         <div class="flex-container">
             <mat-form-field>
                 <mat-label>EARLIEST START</mat-label>
